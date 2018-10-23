@@ -1,5 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
 body {
   padding-top: 60px;
 }
@@ -77,4 +78,16 @@ footer ul li {
 }
 a.btn.btn-lg.btn-primary {
     margin-top: 55px;
+}
+
+/* Users index */
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray-lighter;
+  }
 }
