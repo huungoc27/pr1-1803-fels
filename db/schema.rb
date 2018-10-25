@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(version: 20181020090221) do
     t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "remember_digest"
   end
 
 end
