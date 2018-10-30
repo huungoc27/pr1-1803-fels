@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20181020090221) do
   create_table "activities", force: :cascade do |t|
     t.integer "user_id"
     t.string "type"
-    t.integer "Object"
+    t.integer "object_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 20181020090221) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
-    t.string "password"
+    t.string "password_digest"
     t.integer "admin"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -70,13 +70,12 @@ ActiveRecord::Schema.define(version: 20181020090221) do
 
   create_table "words", force: :cascade do |t|
     t.string "name"
-    t.integer "result"
+    t.integer "answer_id"
     t.integer "lesson_id"
     t.integer "learned"
     t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "remember_digest"
   end
 
 end
