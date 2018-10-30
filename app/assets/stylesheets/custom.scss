@@ -92,6 +92,20 @@ a.btn.btn-lg.btn-primary {
     border-bottom: 1px solid $gray-lighter;
   }
 }
+.categories{
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray-lighter;
+    border-top: 1px solid $gray-lighter;
+    border-left: 1px solid $gray-lighter;
+    border-right: 1px solid $gray-lighter;
+
+  }
+}
+
 
 .checkbox {
   margin-top: none;
