@@ -1,3 +1,17 @@
+User.create!(name:  "Example User",
+             email: "ngoc@a.org",
+             password: "123456",
+             admin:true
+             )
+
+99.times do |n|
+  name  = Faker::Name.name
+  email = "ngoc-#{n+1}@a.org"
+  password = "123456"
+  User.create!(name:  name,
+               email: email,
+               password: password)
+end
 10.times do |n|
   category = Category.create(name: "Category #{n+1}")
 end
@@ -25,3 +39,10 @@ end
               lesson_id: lesson_id,
               category_id: category_id)
 end
+
+users = User.all
+user = users.first
+following = users[2..20]
+followers = users[3..30]
+following.each { |followed| user.follow(followed) }
+followers.each { |follower| follower.follow(user) }
