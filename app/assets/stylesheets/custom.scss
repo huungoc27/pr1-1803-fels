@@ -19,6 +19,7 @@ textarea {
 
 .center h1 {
   margin-bottom: 10px;
+  color: red;
 }
 /* typography */
 
@@ -104,4 +105,12 @@ a.btn.btn-lg.btn-primary {
 #session_remember_me {
   width: auto;
   margin-left: 0;
+}
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
 }
