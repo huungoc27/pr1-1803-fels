@@ -1,6 +1,5 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
 body {
   padding-top: 60px;
 }
@@ -21,6 +20,8 @@ textarea {
   margin-bottom: 10px;
   color: red;
 }
+
+
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -47,13 +48,16 @@ p {
   font-size: 1.1em;
   line-height: 1.7em;
 }
+
+
 /* footer */
 
 footer {
-  margin-top: 45px;
+  margin-top: 90px;
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
   color: #777;
+  clear: both;
 }
 
 footer a {
@@ -77,9 +81,11 @@ footer ul li {
   float: left;
   margin-left: 15px;
 }
+
 a.btn.btn-lg.btn-primary {
-    margin-top: 55px;
+  margin-top: 55px;
 }
+
 
 /* Users index */
 
@@ -102,11 +108,8 @@ a.btn.btn-lg.btn-primary {
     border-top: 1px solid $gray-lighter;
     border-left: 1px solid $gray-lighter;
     border-right: 1px solid $gray-lighter;
-
   }
 }
-
-
 .checkbox {
   margin-top: none;
   margin-bottom: 10px;
@@ -115,16 +118,7 @@ a.btn.btn-lg.btn-primary {
     font-weight: normal;
   }
 }
-
 #session_remember_me {
   width: auto;
   margin-left: 0;
-}
-
-/* forms */
-
-input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
-  width: 100%;
-  margin-bottom: 15px;
 }
