@@ -169,3 +169,7 @@ input, textarea, select, .uneditable-input {
   padding: 0;
 }
 
+#type_learned, #type_not_learned, #type_all, #search_word{
+  width: auto;
+  display: inline-block;
+}

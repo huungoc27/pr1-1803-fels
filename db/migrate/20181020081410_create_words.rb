@@ -4,7 +4,7 @@ class CreateWords < ActiveRecord::Migration[5.1]
       t.string :name
       t.integer :answer_id
       t.integer :lesson_id
-      t.integer :learned
+      t.boolean :learned
       t.integer :category_id
 
       t.timestamps
