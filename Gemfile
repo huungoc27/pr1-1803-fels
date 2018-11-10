@@ -7,8 +7,6 @@ end
 
 gem "rails", "~> 5.1.6"
 gem "sqlite3"
-gem "bcrypt"
-gem "faker",          "1.7.3"
 gem "puma", "~> 3.7"
 gem "sass-rails", "~> 5.0"
 gem "uglifier", ">= 1.3.0"
@@ -18,6 +16,9 @@ gem "jbuilder", "~> 2.5"
 gem "will_paginate"
 gem "bootstrap-will_paginate"
 gem "bootstrap-sass", "3.3.7"
+gem "bcrypt"
+gem "faker"
+gem "jquery-rails"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

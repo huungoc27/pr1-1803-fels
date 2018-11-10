@@ -6,4 +6,10 @@ Rails.application.routes.draw do
   get "signup", to: "users#new"
   get "/show", to: "users#show"
   resources :users
+  resources :categories
+  namespace :admin do
+    root "users#index"
+    resources :users, only: [:index, :destroy]
+    resources :categories, only: [:index, :show]
+  end
 end

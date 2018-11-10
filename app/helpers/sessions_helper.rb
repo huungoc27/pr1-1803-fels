@@ -25,4 +25,13 @@ module SessionsHelper
   def logged_in?
     !current_user.nil?
   end
+
+  def header_text
+    if current_user.admin
+      @header_text = "Admin"
+    else
+      @header_text = "Account"
+    end
+  end
 end
+
