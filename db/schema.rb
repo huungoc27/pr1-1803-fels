@@ -9,7 +9,6 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended that you check this file into your version control system.
-
 ActiveRecord::Schema.define(version: 20181106110920) do
 
   create_table "activities", force: :cascade do |t|
@@ -79,9 +78,4 @@ ActiveRecord::Schema.define(version: 20181106110920) do
     t.datetime "updated_at", null: false
   end
 
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "password_digest"
-  end
 end
-

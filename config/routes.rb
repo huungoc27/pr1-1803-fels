@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get "/show", to: "users#show"
   resources :users
   resources :categories
+  resources :words, only: :index
   namespace :admin do
     root "users#index"
     resources :users, only: [:index, :destroy]
