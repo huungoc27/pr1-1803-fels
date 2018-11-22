@@ -4,6 +4,9 @@ class User < ApplicationRecord
   has_many :active_relationships, class_name:  Relationship.name,
     foreign_key: :follower_id,
     dependent:   :destroy
+  has_many :active_relationships,  class_name:  Relationship.name,
+    foreign_key: :follower_id,
+    dependent:   :destroy
   has_many :passive_relationships, class_name:  Relationship.name,
     foreign_key: :followed_id,
     dependent:   :destroy
@@ -38,6 +41,21 @@ class User < ApplicationRecord
     return false if remember_digest.nil?
     BCrypt::Password.new(remember_digest).is_password?(remember_token)
   end
+
+  def forget
+    update_attribute :remember_digest, nil
+  end
+
+  def follow other_user
+    following << other_user
+  end
+
+  def unfollow other_user
+    following.delete(other_user)
+  end
+
+  def following? other_user
+    following.include? other_user
+  end
+
 end
-
-

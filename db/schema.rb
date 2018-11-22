@@ -9,7 +9,8 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended that you check this file into your version control system.
-ActiveRecord::Schema.define(version: 20181106110920) do
+
+ActiveRecord::Schema.define(version: 20181020090221) do
 
   create_table "activities", force: :cascade do |t|
     t.integer "user_id"
@@ -56,6 +57,9 @@ ActiveRecord::Schema.define(version: 20181106110920) do
     t.datetime "update_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["followed_id"], name: "index_relationships_on_followed_id"
+    t.index ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
+    t.index ["follower_id"], name: "index_relationships_on_follower_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -63,9 +67,9 @@ ActiveRecord::Schema.define(version: 20181106110920) do
     t.string "email"
     t.string "password_digest"
     t.boolean "admin"
+    t.string "remember_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "remember_digest"
   end
 
   create_table "words", force: :cascade do |t|
