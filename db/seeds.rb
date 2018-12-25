@@ -1,19 +1,13 @@
-User.create!(name:  "Example User",
-             email: "ngoc@a.org",
-             password: "123456",
-             admin:true
-             )
 
-99.times do |n|
-  name  = Faker::Name.name
-  email = "ngoc-#{n+1}@a.org"
-  password = "123456"
-  User.create!(name:  name,
-               email: email,
-               password: password)
-end
 10.times do |n|
   category = Category.create(name: "Category #{n+1}")
+end
+
+10.times do |n|
+User.create!(name:  "User#{n+1}",
+             email: "nguyenvana#{n+1}@gmail.com",
+             password:              "123456",
+             password_confirmation: "123456")
 end
 
 15.times do |n|
@@ -31,7 +25,7 @@ end
 
 30.times do |n|
   name = "word #{n+1}"
-  learned = 1
+  learned = [true, false].sample
   category_id = Category.first.id
   lesson_id = Lesson.first.id
   Word.create!(name: name,
