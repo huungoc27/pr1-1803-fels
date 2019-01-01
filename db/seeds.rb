@@ -11,8 +11,8 @@ User.create!(name:  "User#{n+1}",
 end
 
 15.times do |n|
-  name  = "lession #{n+1}",
-  status = "status",
+  name  = "Lesson #{n+1}"
+  status = "status"
   score = 1
   category_id = Category.first.id
   user_id = User.first.id
@@ -31,7 +31,14 @@ end
   Word.create!(name: name,
               learned: learned,
               lesson_id: lesson_id,
-              category_id: category_id)
+              category_id: category_id,
+              answers_attributes: [
+                {name: "answers 1", is_correct: false},
+                {name: "answers 2", is_correct: false},
+                {name: "answers 3", is_correct: true},
+                {name: "answers 4", is_correct: false},
+              ]
+  )
 end
 
 users = User.all
