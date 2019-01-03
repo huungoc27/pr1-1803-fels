@@ -8,4 +8,10 @@ class Word < ApplicationRecord
   scope :category_id, ->(category_id) {
     where category_id: category_id if category_id.present?
   }
+
+  accepts_nested_attributes_for :answers
+
+  def find_answers
+    self.answers.find_by is_correct: true
+  end
 end
