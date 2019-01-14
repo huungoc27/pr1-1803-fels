@@ -4,7 +4,6 @@ class CreateAnswers < ActiveRecord::Migration[5.1]
       t.string :name
       t.integer :word_id
       t.boolean :is_correct
-
       t.timestamps
     end
   end

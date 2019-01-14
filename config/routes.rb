@@ -12,11 +12,13 @@ Rails.application.routes.draw do
   end
   resources :relationships, only: [:create, :destroy]
   resources :categories, only: [:index, :show]
+  resources :lessons, only: [:create, :update, :show]
   resources :words, only: :index
   namespace :admin do
     root "users#index"
     resources :users, only: [:index, :destroy]
-    resources :categories, only: [:index, :show]
-    resources :words, only: [:index, :destroy]
+    resources :categories, only: [:index, :show, :destroy] do
+      resources :words, except: [:edit, :update]
+    end
   end
 end

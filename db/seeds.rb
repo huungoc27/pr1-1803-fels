@@ -1,8 +1,8 @@
-User.create!(name:  "Admin",
-             email: "admin@gmail.com",
-             password:              "123456",
-             password_confirmation: "123456",
-             admin: true)
+User.create!(name:  "Example User",
+             email: "admin@a.org",
+             password: "123456",
+             admin:true
+)
 
 10.times do |n|
   category = Category.create(name: "Category #{n+1}")
@@ -32,18 +32,32 @@ end
   name = "word #{n+1}"
   learned = [true, false].sample
   category_id = Category.first.id
-  lesson_id = Lesson.first.id
   Word.create!(name: name,
               learned: learned,
-              lesson_id: lesson_id,
               category_id: category_id,
-              answers_attributes: [
-                {name: "answers 1", is_correct: false},
-                {name: "answers 2", is_correct: false},
-                {name: "answers 3", is_correct: true},
-                {name: "answers 4", is_correct: false},
-              ]
-  )
+              answers_attributes:[
+                {name: "word #{n+1}_ans1", is_correct: true},
+                {name: "word #{n+1}_ans2", is_correct: false},
+                {name: "word #{n+1}_ans3", is_correct: false},
+                {name: "word #{n+1}_ans4", is_correct: false},
+                {name: "word #{n+1}_ans5", is_correct: false}
+                ])
+end
+
+15.times do |n|
+  name  = "lession #{n+1}",
+  category_id = Category.first.id
+  user_id = User.first.id
+  Lesson.create!(name: name,
+              category_id: category_id,
+              user_id: user_id,
+              lesson_words_attributes:[
+                {word_id:1},
+                {word_id:2},
+                {word_id:3},
+                {word_id:4},
+                {word_id:5}
+                ])
 end
 
 users = User.all

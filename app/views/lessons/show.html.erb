@@ -1,0 +1,9 @@
+<% provide(:title, "#{@lesson.name}") %>
+<h1><%= @category.name %></h1>
+<h2><%= @lesson.name %></h2>
+<%if @lesson.finished? %>
+  <%= render "lessons/score" %>
+<% else %>
+  <%= render "lessons/start" %>
+<% end %>
+
